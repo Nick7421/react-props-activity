@@ -14,9 +14,7 @@ onIncrementNumber = (event)=> {
     })
 }
 decreaseNumber = (event)=>{
-    this.setState({
-        incrementNumber: this.state.incrementNumber - this.state.incrementNumber
-    })
+   this.props.decreaseNumber(this.state.incrementNumber)
 }
     render(){
         console.log(this.state);

@@ -4,13 +4,25 @@ import Header from './components/Header.js'
 import EnterNumber from './components/EnterNumber.js'
 
 class App extends Component {
+  constructor() {
+    super();
+    this.state = {
+      total: 0
+    }
+  }
+  decreaseNumber= (inputNumber)=>{
+    this.setState({
+      total: this.state.total - inputNumber
+  })
+  }
   render() {
     return (
       <div className="App">
         <header className="App-header">
           <Header />
         </header>
-        <EnterNumber />
+        {JSON.stringify(this.state)}
+        <EnterNumber decreaseNumber = {this.decreaseNumber}  />
       </div>
     );
   }
