@@ -4,7 +4,7 @@ class EnterNumber extends Component{
     constructor(props){
         super(props);
         this.state = {
-            incrementNumber: '',
+            incrementNumber: 0,
                 }
     }
 
@@ -13,16 +13,19 @@ onIncrementNumber = (event)=> {
         incrementNumber: event.target.value,
     })
 }
-decreaseNumber = (event)=>{
+componentdecreaseNumber = (event)=>{
    this.props.decreaseNumber(this.state.incrementNumber)
+}
+componentincreaseNumber = (event) =>{
+    this.props.increaseNumber(this.state.incrementNumber)
 }
     render(){
         console.log(this.state);
         return(
             <div>
-            <button>Increase</button>
+            <button onClick ={this.componentincreaseNumber}>Increase</button>
             <input onChange={this.onIncrementNumber} type="text" placeholder="enter increment Number" />
-            <button onClick={this.decreaseNumber}>Decrease</button>
+            <button onClick={this.componentdecreaseNumber}>Decrease</button>
             {JSON.stringify(this.state.incrementNumber)}
             </div>
             

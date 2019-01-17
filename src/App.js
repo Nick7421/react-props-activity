@@ -10,6 +10,11 @@ class App extends Component {
       total: 0
     }
   }
+  increaseNumber=(inputNumber) =>{
+    this.setState({
+      total:this.state.total + parseInt(inputNumber)
+    })
+  }
   decreaseNumber= (inputNumber)=>{
     this.setState({
       total: this.state.total - inputNumber
@@ -22,7 +27,7 @@ class App extends Component {
           <Header />
         </header>
         {JSON.stringify(this.state)}
-        <EnterNumber decreaseNumber = {this.decreaseNumber}  />
+        <EnterNumber decreaseNumber = {this.decreaseNumber} increaseNumber ={this.increaseNumber}  />
       </div>
     );
   }
